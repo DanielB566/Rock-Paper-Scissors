@@ -1,4 +1,4 @@
-@<!doctype html>
+<!doctype html>
 <html lang="en">
     <head>
         <title>Rock Paper Scissors</title>
@@ -16,13 +16,56 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <header>
+            <h1 class="center">Rock Paper Scissors!</h1>
             <!-- place navbar here -->
         </header>
-        <main></main>
+        <main>
+            
+    <div class="container">
+      <div class="context">
+        <div class="content-1">
+          <!-- team headin -->
+          <div class="RM-heading">
+            <p class="">User</p>
+          </div>
+          <!-- counter region -->
+          <div class="display-area">
+            <div class="display-region">
+              <h2 id="counter1">0</h2>
+            </div>
+          </div>
+          <div class="btn add">
+            <button onclick="rAdd1()">+1</button>
+            <button onclick="rAdd2()">+2</button>
+            <button onclick="rAdd3()">+3</button>
+          </div>
+        </div>
+        <div class="content-2">
+          <div class="Barcelona-heading">
+            <p>Computer</p>
+          </div>
+          <div class="display-area">
+            <div class="display-region">
+              <h2 id="counter2">0</h2>
+            </div>
+          </div>
+          <div class="btn add">
+            <button onclick="bAdd1()">+1</button>
+            <button onclick="bAdd2()">+2</button>
+            <button onclick="bAdd3()">+3</button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-reset">
+        <button onclick="reset()">Reset</button>
+      </div>
+    </div>
+        </main>
         <footer>
             <!-- place footer here -->
         </footer>
