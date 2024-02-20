@@ -3,7 +3,13 @@ let username = prompt('What is your name?:'); // asks for name stores info to be
 
 while (username === null) {
     username = prompt('Please enter a vaild name:'); // countines to ask for name until they enter a vaild response
+    break;
 }
+
+
+
+
+
 
 document.getElementById('username').innerHTML = username; // goes into html to insert Name infront of the score.
 
@@ -21,6 +27,13 @@ const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissor');
 
 
+
+
+// computer choice
+function computerchoice(){
+    let compChoice = [rockBtn, paperBtn, scissorsBtn]
+    return randomNumber = Math.floor(Math.random() * compChoice.length);
+}
 
 
 
