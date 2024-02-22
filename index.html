@@ -30,8 +30,11 @@
           <h1 class="scores" id="ComputerScore">Computer's Score: 0</h1>
         </div>
         <h1 class="header">Chose a move!</h1>
-        <h1 class="header" id="moves">Moves left: 5</h1>
-        <h2 id="result" class="text-center"></h2>
+        <h1 class="header" id="moves">Rounds Played: 0</h1>
+        <h2 id="playerchoice" class="header"></h2>
+        <h2 id="compchoice" class="header"></h2>
+        <h2 id="result" class="text-center header"></h2>
+        <h2 id="randommsg" class="text-center header"></h2>
         <div class="row justify-content-center g-4">
           <div class="col-md-3 text-center">
             <button id="rock" class="btn" onclick="game('rock')"> Rock </button>
@@ -42,9 +45,9 @@
           <div class="col-md-3 text-center">
             <button id="scissor" class="btn"  onclick="game('scissor')"> Scissors </button>
           </div>
-          <h2 class="header" id="randommsg"></h2>
+          <h2 class="" id=""></h2>
           <div class="col-md-3 text-center">
-            <button id="reset" class="btn"> Reset </button> <!--move this later when i add the footer-->
+            <button id="reset" class="btn" onclick="reset()"> Reset </button> <!--move this later when i add the footer-->
           </div>
         </div>
       </div>
