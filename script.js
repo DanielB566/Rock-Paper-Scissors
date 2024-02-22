@@ -8,15 +8,15 @@ while (username === null) {
 document.getElementById('username').innerHTML = username; // goes into html to insert Name infront of the score.
 
 // starting score
-let playscore = 0
+let playScore = 0
 let computerScore = 0
 let moves = 5
 
 // def variables 
-const playerScoreElement = document.getElementById('playerScore');
-const computerScoreElement = document.getElementById('ComputerScore');
-const result = document.getElementById('result');
-const movesleft = document.getElementById('moves')
+let playerScoreElement = document.getElementById('playerScore');
+let computerScoreElement = document.getElementById('ComputerScore');
+let result = document.getElementById('result');
+let movesleft = document.getElementById('moves')
 
 
 const resetBtn = document.getElementById('reset')
@@ -40,6 +40,12 @@ function computerchoice(){
     }
 }
 
+
+function reset(){
+    moves = 6
+    playScore = 0
+    computerScore = 0
+}
 // user choice
 function game(userChoice){
     
@@ -49,17 +55,27 @@ function game(userChoice){
         outcomeElement.textContent = 'It\'s a tie!';
         moves--;
     }
-    else if (userChoice === 'rock' && computerchoice === 'scissor'  ) || (userChoice === 'paper' && computerchoice === 'rock') || (userChoice === 'scissor' && computerchoice === 'paper'){
-        outcomeElement.textContent = 'You won!';
+    else if (userChoice === 'rock' && computerchoice === 'scissor' || userChoice === 'paper' && computerchoice === 'rock' || userChoice === 'scissor' && computerchoice === 'paper'){
+        result.textContent = 'You won!';
         playerScoreElement++;
         moves--;
     }
     else {
-        outcomeElement.textContent = 'You lose!';
+        result.textContent = 'You lose!';
         computerScoreElement++;
         moves--;
     }
+
+    // Update the score elements
+    playerScoreElement.textContent = `${username} Score: ${playScore}`;
+    computerScoreElement.textContent = `Computer's Score: ${computerScore}`;
+    movesleft.textContent = `Moves left: ${moves}`;
+
+    if (moves === 0){
+        reset()
+    }
 }
+
 
 
 
