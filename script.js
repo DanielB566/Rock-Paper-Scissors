@@ -17,10 +17,10 @@ let roundsplayed = 0
 function computerchoice(){
     const rndNum = Math.floor(Math.random() * 3);
 
-    if (rndNum === 1){
+    if (rndNum === 0){
         return 'rock'
     }
-    else if (rndNum === 2){
+    else if (rndNum === 1){
         return 'paper'
     }
     else{
@@ -41,37 +41,36 @@ function reset(){
 }
 
 // user choice
-function game(userChoice){
     
-    computerchoice()
-
-    if (userChoice === computerchoice()) {
-        result.textContent = 'It\'s a tie!';
-        roundsplayed++;
+    function game(userChoice) {
+        const computerChoice = computerchoice(); // Store the computer's choice
+        
+        if (userChoice === computerChoice) {
+            result.textContent = 'It\'s a tie!';
+            roundsplayed++;
+        } else if (userChoice === 'rock' && computerChoice === 'scissor' || userChoice === 'paper' && computerChoice === 'rock' || userChoice === 'scissor' && computerChoice === 'paper') {
+            result.textContent = 'You won!';
+            playScore++;
+            roundsplayed++;
+        } else {
+            result.textContent = 'You lose!';
+            computerScore++;
+            roundsplayed++;
+        }
+    
+        // Update the score elements
+        document.getElementById('playerScore').textContent = `${username} Score: ${playScore}`;
+        document.getElementById('moves').textContent = `Rounds played: ${roundsplayed}`;
+        document.getElementById('ComputerScore').textContent = `Computer's Score: ${computerScore}`;
+    
+        if (roundsplayed === 6) {
+            reset();
+        }
+    
+        document.getElementById('playerchoice').textContent = `${username} threw: ${userChoice}`;
+        document.getElementById('compchoice').textContent = `Computer threw: ${computerChoice}`;
     }
-    else if (userChoice === 'rock' && computerchoice() === 'scissor' || userChoice === 'paper' && computerchoice() === 'rock' || userChoice === 'scissor' && computerchoice() === 'paper'){
-        result.textContent = 'You won!';
-        playScore++;
-        roundsplayed++;
-    }
-    else {
-        result.textContent = 'You lose!';
-        computerScore++;
-        roundsplayed++;
-    }
 
-    // Update the score elements
-    document.getElementById('playerScore').textContent = `${username} Score: ${playScore}`;
-    document.getElementById('moves').textContent = `Rounds played: ${roundsplayed}`;
-    document.getElementById('ComputerScore').textContent = `Computer's Score: ${computerScore}`;
-
-    if (roundsplayed === 6){
-        reset()
-    } 
-
-    document.getElementById('playerchoice').textContent = `${username} threw: ${userChoice}`
-    document.getElementById('compchoice').textContent = `Computer threw: ${computerchoice()}`
-}
 
 function messages(){
     let winmsg = ['Victory is yours! You/re a Rock Paper Scissors champion!', 'Congratulations! You outsmarted the computer this time', 'Well done! You crushed it in Rock-Paper-Scissors. Can you keep the streak going?']
