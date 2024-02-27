@@ -45,3 +45,10 @@ h1{
     background-color: black;
     color: white;
   }
+
+  .greenText, #playerScoreDisplay{
+    color: hsl(130, 100%, 50%);
+}
+.redText, #computerScoreDisplay{
+    color: hsl(0, 84%, 60%);
+}

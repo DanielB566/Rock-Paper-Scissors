@@ -11,10 +11,11 @@ document.getElementById('username').innerHTML = username; // goes into html to i
 let playScore = 0
 let computerScore = 0
 let roundsplayed = 0
+let color
 
 
 let winmsg = ['Victory is yours! You/re a Rock Paper Scissors champion!', 'Congratulations! You outsmarted the computer this time', 'Well done! You crushed it in Rock-Paper-Scissors. Can you keep the streak going?']
-let losemsg = ['Tough luck! The computer got the best of you this time. Try again!', 'It happens to the best of us. Don/t give up! Another round awaits.', 'A valiant effort, but luck wasn/t on your side this time.']
+let losemsg = ['Tough luck! The computer got the best of you this time. Try again!', 'It happens to the best of us. Don/t give up! Another round awaits.', 'A valiant effort, but luck was not on your side this time.']
 let tiemsg = ['No winner this time! A tie in Rock-Paper-Scissors.', 'Neither victory nor defeat! You and the computer are in perfect harmony this round.']
 
 
@@ -62,14 +63,17 @@ function reset(){ // function for reset button
         if (userChoice === computerChoice) {
             result.textContent = 'It\'s a tie!';
             roundsplayed++;
+
             
         } else if (userChoice === 'rock' && computerChoice === 'scissor' || userChoice === 'paper' && computerChoice === 'rock' || userChoice === 'scissor' && computerChoice === 'paper') {
             result.textContent = 'You won!';
+            result.classList.add("greenText");
             playScore++;
             roundsplayed++;
          
         } else {
             result.textContent = 'You lose!';
+            result.classList.add("redText");
             computerScore++;
             roundsplayed++;
            
