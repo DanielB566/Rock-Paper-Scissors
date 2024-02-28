@@ -63,17 +63,21 @@ function reset(){ // function for reset button
         if (userChoice === computerChoice) {
             result.textContent = 'It\'s a tie!';
             roundsplayed++;
+            result.classList.remove("redText");
+            result.classList.remove("greenText")
 
             
         } else if (userChoice === 'rock' && computerChoice === 'scissor' || userChoice === 'paper' && computerChoice === 'rock' || userChoice === 'scissor' && computerChoice === 'paper') {
             result.textContent = 'You won!';
             result.classList.add("greenText");
+            result.classList.remove("redText")
             playScore++;
             roundsplayed++;
          
         } else {
             result.textContent = 'You lose!';
             result.classList.add("redText");
+            result.classList.remove("greenText")
             computerScore++;
             roundsplayed++;
            
