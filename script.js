@@ -5,6 +5,7 @@ while (username === null) {
     break;
 }
 
+
 document.getElementById('username').innerHTML = username; // goes into html to insert Name infront of the score.
 
 // starting score
@@ -51,6 +52,7 @@ function reset(){ // function for reset button
     document.getElementById('paper').classList.toggle('d-none');
     document.getElementById('scissor').classList.toggle('d-none');
     document.getElementById('randommsg').textContent = ''
+    document.getElementById('result').classList.toggle('d-none');
    
 
 }
@@ -59,6 +61,7 @@ function reset(){ // function for reset button
     
     function game(userChoice) {
         const computerChoice = computerchoice(); // Store the computer's choice
+        
         
         if (userChoice === computerChoice) {
             result.textContent = 'It\'s a tie!';
@@ -89,17 +92,17 @@ function reset(){ // function for reset button
         document.getElementById('playerScore').textContent = `${username} Score: ${playScore}`;
         document.getElementById('moves').textContent = `Rounds played: ${roundsplayed}`;
         document.getElementById('ComputerScore').textContent = `Computer's Score: ${computerScore}`;
-        document.getElementById('playerchoice').textContent = `${username} threw: ${userChoice}`;
+        document.getElementById('playerchoice').textContent = `${username} threw: ${userChoice}`  ;
         document.getElementById('compchoice').textContent = `Computer threw: ${computerChoice}`;
 
         if (roundsplayed === 5){ // removes buttons once round 5 is reached
             document.getElementById('rock').classList.toggle('d-none');
             document.getElementById('paper').classList.toggle('d-none');
             document.getElementById('scissor').classList.toggle('d-none');
-            
+            document.getElementById('result').classList.toggle('d-none');
+         }
 
-            
-        }
+     
     }
 
 
@@ -112,12 +115,14 @@ function endGame(){ // random generated message to send after the game is over
     else if (roundsplayed === 5 && playScore > computerScore){
         let rndIndex = Math.floor(Math.random() * winmsg.length);
         document.getElementById('randommsg').textContent = winmsg[rndIndex]
+        confetti();
 
     }
     else if (roundsplayed === 5 && playScore < computerScore){
         let rndIndex = Math.floor(Math.random() * losemsg.length);
         document.getElementById('randommsg').textContent = losemsg[rndIndex]
     }
+
 }
 
 

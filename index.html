@@ -14,6 +14,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -40,20 +43,23 @@
             <button id="rock" class="btn" onclick="game('rock')"> Rock </button>
           </div>
           <div class="col-md-3 text-center">
-            <button id="paper" class="btn"  onclick="game('paper')"> Paper </button>
+            <button id="paper" class="btn" onclick="game('paper')"> Paper </button>
           </div>
           <div class="col-md-3 text-center">
-            <button id="scissor" class="btn"  onclick="game('scissor')"> Scissors </button>
+            <button id="scissor" class="btn" onclick="game('scissor')"> Scissors </button>
           </div>
           <h2 class="" id=""></h2>
           <div class="col-md-3 text-center">
-            <button id="reset" class="btn" onclick="reset()"> Reset </button> <!--move this later when i add the footer-->
+            <button id="reset" class="btn" onclick="reset()"> Reset </button>
+            <!--move this later when i add the footer-->
           </div>
         </div>
       </div>
     </div>
   </div>
-  </div>
+
+
+ 
 
 
 
@@ -70,10 +76,39 @@
 
 
   </main>
-  <footer>
-    <!-- place footer here -->
+  <footer class="bg-dark text-center text-white footerstyle">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Github -->
+        <a
+          class="btn text-white btn-floating m-1 footerhover"
+          style="background-color: #333333;"
+          href="https://github.com/DanielB566" target="_blank"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a class="btn text-white btn-floating m-1 footerhover"
+        style="background-color: #333333;"
+        href="https://danielb566.github.io/Gallery/" target="_blank"
+        role="button"
+        ><h5 class="">Gallary</h5></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center bg-dark">
+      © 2023 Copyright:
+      <a class="text-white">Daniel Bootnik</a> 
+    </div>
+    <!-- Copyright -->
   </footer>
+  <!--footer-->
   <!-- Bootstrap JavaScript Libraries -->
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
@@ -81,6 +116,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
     integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
     crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <script src="script.js"></script>
 

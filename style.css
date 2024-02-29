@@ -1,8 +1,7 @@
-
-
-
 body{
-	
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
@@ -52,3 +51,23 @@ h1{
 .redText, #computerScoreDisplay{
     color: hsl(0, 84%, 60%);
 }
+
+.footerhover:hover{
+    animation: bounce .3s infinite alternate;
+    
+}
+
+@keyframes bounce {
+    to { transform: scale(1.2); }
+  }
+
+  .footerstyle{
+    margin-top: auto;
+    
+  }
+
+  .footer{
+   margin-top: auto;
+  }
+/*footer hover  */
+
