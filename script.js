@@ -7,6 +7,7 @@ while (username === null) {
 
 
 document.getElementById('username').innerHTML = username; // goes into html to insert Name infront of the score.
+document.getElementById('reset').classList.toggle('d-none')
 
 // starting score
 let playScore = 0
@@ -53,6 +54,7 @@ function reset(){ // function for reset button
     document.getElementById('scissor').classList.toggle('d-none');
     document.getElementById('randommsg').textContent = ''
     document.getElementById('result').classList.toggle('d-none');
+    document.getElementById('reset').classList.toggle('d-none')
    
 
 }
@@ -100,6 +102,7 @@ function reset(){ // function for reset button
             document.getElementById('paper').classList.toggle('d-none');
             document.getElementById('scissor').classList.toggle('d-none');
             document.getElementById('result').classList.toggle('d-none');
+            document.getElementById('reset').classList.toggle('d-none')
          }
 
      
